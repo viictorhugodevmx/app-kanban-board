@@ -1,0 +1,81 @@
+.board {
+  display: flex;
+  gap: 24px;
+  margin-top: 24px;
+}
+
+.column {
+  flex: 1;
+  background: #f3f4f6;
+  padding: 16px;
+  border-radius: 8px;
+  min-height: 300px;
+}
+
+h1 {
+  margin-bottom: 16px;
+}
+
+.tasks {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.card {
+  background: #fff;
+  padding: 12px;
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+
+  h3 {
+    margin: 0 0 6px;
+  }
+
+  p {
+    margin: 0;
+    font-size: 14px;
+  }
+}
+
+.actions {
+  margin-top: 8px;
+  display: flex;
+  gap: 6px;
+
+  button {
+    border: none;
+    background: #e5e7eb;
+    padding: 4px 8px;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+
+  button:last-child {
+    background: #ef4444;
+    color: #fff;
+  }
+}
+
+
+.new-task {
+  display: flex;
+  gap: 8px;
+  margin: 12px 0;
+
+  input {
+    flex: 1;
+    padding: 6px 8px;
+  }
+
+  button {
+    padding: 6px 10px;
+    border: none;
+    background: #111;
+    color: #fff;
+    cursor: pointer;
+  }
+}
+
+

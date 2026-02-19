@@ -1,1 +1,41 @@
-<p>board works!</p>
+<h1>Kanban Board</h1>
+
+<section class="board">
+  @for (column of columns; track column.id) {
+    <div class="column">
+      <h2>{{ column.title }}</h2>
+
+      @if (column.id === 'todo') {
+        <div class="new-task">
+          <input
+            type="text"
+            placeholder="Nueva tarea..."
+            [(ngModel)]="newTaskTitle"
+          />
+          <button (click)="createTask()">+</button>
+        </div>
+      }
+
+      <div class="tasks">
+        @for (task of getTasks(column.id); track task.id) {
+          <div class="card">
+            <h3>{{ task.title }}</h3>
+            <p>{{ task.description }}</p>
+
+            <div class="actions">
+              @if (column.id !== 'todo') {
+                <button (click)="move(task.id, 'left', column.id)">←</button>
+              }
+
+              @if (column.id !== 'done') {
+                <button (click)="move(task.id, 'right', column.id)">→</button>
+              }
+
+              <button (click)="delete(task.id)">✕</button>
+            </div>
+          </div>
+        }
+      </div>
+    </div>
+  }
+</section>
